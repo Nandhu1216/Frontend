@@ -263,6 +263,7 @@
     transform: scale(1.05);
   }
   
+  /* Styling for LinkedIn button image */
   .linkedin-btn .social-icon {
     width: 60px;
     height: 60px;
@@ -270,11 +271,12 @@
     margin-right: 10px;
   }
   
+  /* LinkedIn button additional styling */
   .linkedin-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:10px;
+    gap: 10px;
     border-radius: 30px;
     padding: 12px 24px;
     transition: background 0.3s ease, transform 0.2s ease;
@@ -283,6 +285,30 @@
   .linkedin-btn:hover {
     transform: scale(1.05);
   }
+  
+  /* Styling for GitHub button image */
+  .github-btn .social-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 10px;
+  }
+  
+  /* GitHub button additional styling */
+  .github-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 30px;
+    padding: 12px 24px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .github-btn:hover {
+    transform: scale(1.05);
+  }
+  
   
   /* About Section */
   #about {
