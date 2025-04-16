@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nandhu Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#journey">My Journey</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="section home-section">
+    <h1>Hi, I'm Nandhu V</h1>
+    <p class="title">Software Developer</p>
+    <p class="intro">
+      I’m a quick learner with a curious mind, always eager to explore new technologies.<br />
+      Ready to take on real-world challenges and contribute to building impactful tech solutions.
+    </p>
+    <div class="button-group">
+      <a href="https://www.linkedin.com/in/nandhuv" target="_blank" class="linkedin-btn">
+        <img src="assets/linkedin.png" alt="LinkedIn" class="social-icon" />
+      </a>
+      <a href="assets/nandhu.pdf" target="_blank" class="btn outline">View Resume</a>
+    </div>
+  </section>
+  
+  <!-- Skills Section -->
+  <!-- Skills Section -->
+<section id="skills" class="section">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <img src="assets/java.png" alt="Java" class="skill-icon" />
+      <p>Java</p>
+    </div>
+    <div class="skill-card">
+      <img src="assets/flutter.png" alt="Flutter" class="skill-icon" />
+      <p>Flutter (Basics)</p>
+    </div>
+    <div class="skill-card">
+      <img src="assets/html.png" alt="HTML" class="skill-icon" />
+      <p>HTML</p>
+    </div>
+    <div class="skill-card">
+      <img src="assets/css.png" alt="CSS" class="skill-icon" />
+      <p>CSS</p>
+    </div>
+    <div class="skill-card">
+      <img src="assets/javascript.png" alt="JavaScript" class="skill-icon" />
+      <p>JavaScript</p>
+    </div>
+    <div class="skill-card">
+      <img src="assets/nodejs.png" alt="Node.js" class="skill-icon" />
+      <p>Node.js</p>
+    </div>
+    <div class="skill-card">
+      <img src="assets/mongodb.png" alt="MongoDB" class="skill-icon" />
+      <p>MongoDB</p>
+    </div>
+  </div>
+</section>
+
+  
+  <!-- About Section -->
+  <section id="journey" class="section">
+    <h2>My Journey</h2>
+  
+    <!-- Education Timeline -->
+    <div class="education-timeline">
+      <div class="edu-card">
+        <h3>🎓 Master of Computer Applications</h3>
+        <p><strong>2024 – 2026</strong></p>
+        <p>Kumaraguru College of Technology</p>
+        <p>CGPA: 7.05 (Sem 1)</p>
+      </div>
+  
+      <div class="edu-card">
+        <h3>🎓 B.Sc. Computer Science</h3>
+        <p><strong>2020 – 2023</strong></p>
+        <p>M.G.R College, Hosur</p>
+        <p>CGPA: 7.47</p>
+      </div>
+  
+      <div class="edu-card">
+        <h3>🏫 HSE (12th)</h3>
+        <p><strong>2019 – 2020</strong></p>
+        <p>Government Higher Secondary School</p>
+        <p>Percentage: 64%</p>
+      </div>
+  
+      <div class="edu-card">
+        <h3>🏫 SSLC (10th)</h3>
+        <p><strong>2017 – 2018</strong></p>
+        <p>Government Higher Secondary School</p>
+        <p>Percentage: 89%</p>
+      </div>
+    </div>
+  
+    <!-- Certifications & Achievements -->
+    <h2 style="margin-top: 60px;">Certifications & Achievements</h2>
+    <div class="education-timeline">
+      <div class="edu-card">
+        <h3>🏅 Shield of Honor - Arasar Sirappu Parisu</h3>
+        <p>Awarded for academic excellence with a score of <strong>446/500</strong>.</p>
+      </div>
+  
+      <div class="edu-card">
+        <h3>📜 National Service Scheme (NSS)</h3>
+        <p><strong>2018 – 2020</strong> as an NSS Volunteer.</p>
+        <p>Developed leadership and teamwork skills through social initiatives.</p>
+      </div>
+  
+      <div class="edu-card">
+        <h3>🥇 Kabaddi – District Level Monthly Competition</h3>
+        <p>Won 1st place as team captain in a district-level match.</p>
+        <p>Gained leadership and team-building experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <input type="text" id="name" name="name" placeholder="Your Name" required />
+      <input type="email" id="email" name="email" placeholder="Your Email" required />
+      <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="formStatus"></div>
+  </section>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting the traditional way
+
+    // Collect form data
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      message: document.getElementById('message').value
+    };
+
+    // Send the data to the backend using fetch
+    fetch('https://portfoliobackend-itwl.onrender.com/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Handle the response from the server
+      if (data.success) {
+        document.getElementById('formStatus').innerText = 'Your message has been sent successfully!';
+      } else {
+        document.getElementById('formStatus').innerText = 'Something went wrong, please try again.';
+      }
+    })
+    .catch(error => {
+      document.getElementById('formStatus').innerText = 'Error: ' + error.message;
+    });
+  });
+</script>
+
+
+  <script src="js/script.js"></script>
+</body>
+</html>
