@@ -436,7 +436,7 @@ form {
   flex-direction: center;
   gap: 20px;
   width: 100vh;
-  max-width: 600px;
+  max-width: 500px;
   background: #ffffff;
   padding: 40px;
   border-radius: 16px;
