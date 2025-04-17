@@ -152,51 +152,56 @@
   
   
 
-  <!-- Contact Form -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form id="contact-form">
-      <input type="text" id="name" name="name" placeholder="Your Name" required />
-      <input type="email" id="email" name="email" placeholder="Your Email" required />
-      <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Submit</button>
-    </form>
-    <div id="formStatus"></div>
-  </section>
-
-<script>
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting the traditional way
-
-    // Collect form data
-    const formData = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      message: document.getElementById('message').value
-    };
-
-    // Send the data to the backend using fetch
-    fetch('https://portfoliobackend-itwl.onrender.com/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(data => {
-      // Handle the response from the server
-      if (data.success) {
-        document.getElementById('formStatus').innerText = 'Your message has been sent successfully!';
-      } else {
-        document.getElementById('formStatus').innerText = 'Something went wrong, please try again.';
-      }
-    })
-    .catch(error => {
-      document.getElementById('formStatus').innerText = 'Error: ' + error.message;
+  <form id="contact-form">
+    <label>
+      Your name:
+      <input type="text" id="name" name="name" required />
+    </label>
+    <label>
+      Your email:
+      <input type="email" id="email" name="email" required />
+    </label>
+    <label>
+      Your message:
+      <textarea id="message" name="message" required></textarea>
+    </label>
+    <button type="submit">Send</button>
+  </form>
+  
+  <div id="formStatus"></div>
+  
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+  
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+      };
+  
+      fetch('https://portfoliobackend-itwl.onrender.com/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => response.json())
+      .then(data => {
+        const statusDiv = document.getElementById('formStatus');
+        if (data.success) {
+          statusDiv.innerText = '✅ Message sent successfully!';
+        } else {
+          statusDiv.innerText = '❌ Something went wrong. Please try again.';
+        }
+      })
+      .catch(error => {
+        document.getElementById('formStatus').innerText = '❌ Error: ' + error.message;
+      });
     });
-  });
-</script>
+  </script>
+  
 
 
   <script src="js/script.js"></script>
