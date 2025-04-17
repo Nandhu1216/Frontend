@@ -418,39 +418,59 @@ h2 {
   text-align: center;
   padding: 80px 20px;
   min-height: 100vh;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  align-content: center;
 }
 
 #contact h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 2.75rem;
+  font-weight: bold;
+  margin-bottom: 30px;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  gap: 15px;
   max-width: 600px;
-  margin: auto;
+  width: 100%;
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
-form input, form textarea {
-  margin: 10px 0;
-  padding: 15px;
+form input,
+form textarea {
+  padding: 14px 18px;
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #333;
+  outline: none;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 120px;
 }
 
 form button {
-  padding: 15px;
+  padding: 14px;
   background-color: #333;
-  color: white;
+  color: #fff;
   border: none;
-  border-radius: 5px;
-  font-size: 1.2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 form button:hover {
@@ -459,7 +479,9 @@ form button:hover {
 
 #formStatus {
   margin-top: 20px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #007a5a;
 }
 
 /* Scrollbar styles for custom scrollbar appearance */
