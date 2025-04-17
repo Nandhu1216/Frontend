@@ -408,7 +408,6 @@ h2 {
   transform: translateY(-5px) scale(1.05);
   background: linear-gradient(to bottom right, #d4f0ff, #e1ffe7);
 }
-
 /* Contact Section */
 #contact {
   background-color: #f0f4f8;
@@ -417,9 +416,9 @@ h2 {
   padding: 100px 20px;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Heading */
@@ -434,7 +433,6 @@ h2 {
 form {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   gap: 20px;
   width: 100%;
   max-width: 600px;
@@ -443,65 +441,61 @@ form {
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 /* Input and Textarea */
 form input,
 form textarea {
   width: 100%;
-  padding: 16px 20px;
+  padding: 14px 18px;
   font-size: 1rem;
-  border: 1.5px solid #ccc;
-  border-radius: 10px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fdfdfd;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
 }
 
 form input:focus,
 form textarea:focus {
   border-color: #0077cc;
-  box-shadow: 0 0 8px rgba(0, 119, 204, 0.2);
   outline: none;
 }
 
 form textarea {
   resize: vertical;
-  min-height: 150px;
-  line-height: 1.6;
+  min-height: 120px;
 }
 
 /* Submit Button */
 form button {
-  padding: 16px;
+  padding: 14px;
   background-color: #0077cc;
   color: #fff;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease;
 }
 
 form button:hover {
   background-color: #005fa3;
-  transform: scale(1.02);
 }
 
 /* Form Status Message */
 #formStatus {
-  margin-top: 25px;
-  font-size: 1.05rem;
+  margin-top: 20px;
+  font-size: 1.1rem;
   font-weight: 500;
   color: #28a745;
-  transition: opacity 0.3s ease;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   #contact {
-    padding: 60px 15px;
+    padding: 60px 20px;
   }
 
   form {
