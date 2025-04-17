@@ -173,7 +173,8 @@
 <script>
   document.getElementById('contact').addEventListener('submit', function(event) {
     event.preventDefault();
-  
+
+    const form = event.target;
     const formData = {
       name: document.getElementById('name').value,
       email: document.getElementById('email').value,
@@ -191,7 +192,17 @@
     .then(data => {
       const statusDiv = document.getElementById('formStatus');
       if (data.success) {
+        form.reset(); // Clear form fields
+
+        // Show animated success message
         statusDiv.innerText = '✅ Message sent successfully!';
+        statusDiv.classList.add('show-success');
+
+        // Remove animation after a few seconds (optional)
+        setTimeout(() => {
+          statusDiv.classList.remove('show-success');
+          statusDiv.innerText = '';
+        }, 4000);
       } else {
         statusDiv.innerText = '❌ Something went wrong. Please try again.';
       }
@@ -201,7 +212,6 @@
     });
   });
 </script>
-
 
   <script src="js/script.js"></script>
   <script>

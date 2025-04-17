@@ -402,6 +402,20 @@ form button:hover {
   text-align: center;
   font-weight: bold;
 }
+#formStatus {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.4s ease-in-out;
+  color: green;
+}
+
+#formStatus.show-success {
+  opacity: 1;
+  transform: scale(1);
+}
 
 /* Responsive */
 @media (max-width: 600px) {
