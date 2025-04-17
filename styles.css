@@ -435,7 +435,7 @@ form {
   display: flex;
   flex-direction: center;
   gap: 20px;
-  width: 100%;
+  width: 100vh;
   max-width: 600px;
   background: #ffffff;
   padding: 40px;
@@ -463,7 +463,7 @@ form textarea:focus {
 
 form textarea {
   resize: vertical;
-  min-height: 140px;
+  min-height: 100px;
 }
 
 /* Submit Button */
