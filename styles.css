@@ -413,10 +413,10 @@ h2 {
 
 /* Contact Section */
 #contact {
-  background-color: #ffffff;
-  color: #333;
+  background-color: #f0f4f8;
+  color: #1a1a1a;
   text-align: center;
-  padding: 80px 20px;
+  padding: 100px 20px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -424,64 +424,88 @@ h2 {
 }
 
 #contact h2 {
-  font-size: 2.75rem;
-  font-weight: bold;
-  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #222;
 }
 
+/* Form Styling */
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  max-width: 600px;
+  gap: 20px;
   width: 100%;
-  background: #f9f9f9;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
 form input,
 form textarea {
-  padding: 14px 18px;
+  padding: 16px 20px;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  transition: border-color 0.3s ease;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 form input:focus,
 form textarea:focus {
-  border-color: #333;
+  border-color: #0077cc;
+  box-shadow: 0 0 8px rgba(0, 119, 204, 0.2);
   outline: none;
 }
 
 form textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 140px;
 }
 
+/* Submit Button */
 form button {
-  padding: 14px;
-  background-color: #333;
+  padding: 16px;
+  background-color: #0077cc;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 form button:hover {
-  background-color: #555;
+  background-color: #005fa3;
+  transform: scale(1.02);
 }
 
+/* Form Status Message */
 #formStatus {
-  margin-top: 20px;
-  font-size: 1.1rem;
+  margin-top: 25px;
+  font-size: 1.05rem;
   font-weight: 500;
-  color: #007a5a;
+  color: #28a745;
+  transition: opacity 0.3s ease;
+}
+
+/* Responsive Tweak */
+@media (max-width: 768px) {
+  #contact {
+    padding: 60px 15px;
+  }
+
+  form {
+    padding: 30px 20px;
+  }
+
+  #contact h2 {
+    font-size: 2rem;
+  }
 }
 
 /* Scrollbar styles for custom scrollbar appearance */
