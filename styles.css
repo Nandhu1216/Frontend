@@ -433,7 +433,7 @@ h2 {
 /* Form Styling */
 form {
   display: flex;
-  flex-direction: column;
+  flex-direction: center;
   gap: 20px;
   width: 100%;
   max-width: 600px;
