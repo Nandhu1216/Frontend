@@ -13,33 +13,74 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Navbar */
+/* Navbar Layout */
 .navbar {
-  background: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 15px 30px;
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   z-index: 1000;
 }
 
-.navbar ul {
+/* Left: Logo and Name with Floating/Waving Effect */
+.navbar-left {
   display: flex;
-  list-style: none;
-  justify-content: center;
-  gap: 30px;
+  align-items: center;
+  gap: 10px;
+  animation: waveFloat 4s ease-in-out infinite;
+  transform-origin: left center;
 }
 
-.navbar a {
+.nav-profile-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #0077cc;
+}
+
+.nav-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #0077cc;
+}
+
+/* Right: Navigation Links */
+.navbar-right {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-right li a {
   text-decoration: none;
   color: #333;
-  font-weight: 600;
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
-.navbar a:hover {
+.navbar-right li a:hover {
   color: #0077cc;
 }
+
+@keyframes waveFloat {
+  0%   { transform: rotate(0deg) translateY(0px) scale(1); }
+  15%  { transform: rotate(-3deg) translateY(-1px) scale(1.02); }
+  30%  { transform: rotate(2deg) translateY(2px) scale(1); }
+  45%  { transform: rotate(-2deg) translateY(-1px) scale(0.98); }
+  60%  { transform: rotate(1deg) translateY(1px) scale(1.01); }
+  75%  { transform: rotate(-1.5deg) translateY(-2px) scale(1); }
+  90%  { transform: rotate(1deg) translateY(1px) scale(1.01); }
+  100% { transform: rotate(0deg) translateY(0px) scale(1); }
+}
+
 
 /* Section Styling */
 .section {
